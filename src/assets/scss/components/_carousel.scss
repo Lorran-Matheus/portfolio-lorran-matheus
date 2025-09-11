@@ -1,0 +1,72 @@
+@use '../at-rule/mixin' as *;
+
+.carousel__container{
+    position: relative;
+    aspect-ratio: 16/9;
+    place-self: center;
+    @include mobileWidth(90vw, 90vw, 90vw);
+    @include displayFlex(column, center, center);
+    overflow: hidden;
+}
+
+.carousel{
+    &__body{
+        position: relative;
+        aspect-ratio: 16/9;
+        @include mobileWidth(100vw, 100%, 100%);
+        @include displayFlex(row, center, center);
+    }
+
+    &__item{
+        position: relative;
+        aspect-ratio: 16/9;
+        @include mobileWidth(100vw, 100%, 100%);
+    }
+    
+    &__img{
+        aspect-ratio: 16/9;
+        background-color: rgba(0, 102, 255, 0.445);  // debug
+        @include mobileWidth(100vw, 100%, 100%);
+    }
+}
+
+.carousel__control-prev{
+    left: 0;
+}
+
+.carousel__control-next{
+    right: 0;
+}
+
+.carousel__item {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+  position: absolute; /* garante sobreposição */
+}
+
+.carousel__item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  transform: translateX(0);
+  animation: slideRight 0.5s forwards;
+}
+
+.slide-in-left {
+  transform: translateX(0);
+  animation: slideLeft 0.5s forwards;
+}
+
+
+@keyframes slideRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

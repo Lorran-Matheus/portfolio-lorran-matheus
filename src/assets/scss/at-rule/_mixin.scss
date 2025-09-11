@@ -1,0 +1,14 @@
+@use '../abstracts/' as *;
+
+@mixin displayFlex($direction: null, $justify: null, $align: null) {
+    display: flex;
+    flex-direction: #{$direction};
+    justify-content: #{$justify};
+    align-items: #{$align};
+}
+
+@mixin mobileWidth($width: 100vw, $min: 90%, $max: 100%) {
+    width: #{$width};
+    min-width: #{$min};
+    max-width: #{$max};
+}

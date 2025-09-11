@@ -1,0 +1,20 @@
+@use '../at-rule/mixin' as *;
+
+.fourth__content{
+    @include displayFlex(column, center, center);
+    gap: 1rem;
+}
+
+.contact{
+    &__header{
+        text-align: center;
+        gap: .5rem;
+        @include displayFlex(column, center, center);
+        @include mobileWidth(70vw, 70vw, 70vw);
+    }
+
+    &__main{
+        @include displayFlex(column, center, center);
+        gap: 1rem;
+    }
+}

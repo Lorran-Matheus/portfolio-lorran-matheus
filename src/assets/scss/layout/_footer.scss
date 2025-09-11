@@ -1,0 +1,10 @@
+@use '../at-rule/mixin' as *;
+
+footer{
+    padding: 3rem 2rem 20vh;
+    @include displayFlex(column, center, center);
+
+    .terms{
+        text-align: center;
+    }
+}

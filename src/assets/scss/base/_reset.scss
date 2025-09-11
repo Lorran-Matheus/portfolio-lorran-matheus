@@ -1,0 +1,67 @@
+@use '../abstracts' as *;
+@use '../at-rule/' as *;
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+html {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	max-height: 100vh;
+	max-width: 100vw;
+	scroll-behavior: smooth;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	max-height: 100vh;
+	max-width: 100vw;
+}
+
+main{
+    scroll-margin-top: 6rem;
+}
+
+a {
+	text-decoration: none;
+
+	:visited {
+		opacity: .7;
+	}
+}
+
+::-webkit-scrollbar {
+  width: .6rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-color);
+  border: 1px solid var(--text-color);
+  border-radius: .4rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.404);
+}
+
+::-webkit-scrollbar-track{
+	background-color: var(--bg-color-secondary);
+}

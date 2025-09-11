@@ -1,0 +1,95 @@
+@use '../at-rule/mixin' as *;
+
+.btn {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+
+    &:hover {
+        opacity: .9;
+    }
+
+    &:active {
+        filter: brightness(1.2);
+    }
+}
+
+.btn__project {
+    padding: .7rem;
+    border-radius: 2rem;
+    border: 2px solid var(--text-color);
+    background-color: var(--bg-btn);
+
+    div {
+        @include displayFlex(row, space-around, center);
+    }
+
+    &.big {
+        @include mobileWidth(70vw, 85%, 100%);
+        align-self: center;
+    }
+
+    &.small {
+        @include displayFlex(row, space-around, center);
+        @include mobileWidth(60vw, 45%, 60%)
+    }
+}
+
+.btn__github {
+    padding: .9rem 1.5rem;
+    border-radius: .3rem;
+    background-color: var(--bg-btn-secondary);
+    @include displayFlex(row, center, center);
+    @include mobileWidth(30vw, 35%, 40%);
+}
+
+.btn-carousel{
+    position: absolute;
+    border: none;
+    opacity: .8;
+    background: transparent;
+    color: var(--bg-color);
+    font-size: 2.8rem;
+    transition: .25s ease-in-out;
+    @include displayFlex(row, center, center);
+
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.3);
+    }
+
+    &:focus{
+        filter: brightness(2);
+    }
+}
+
+.actions__container {
+    width: 100%;
+    max-width: 100vw;
+    @include displayFlex(row, space-between, center);
+}
+
+@media screen and (max-width: 380px) {
+    .bi-arrow-up-right {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .actions__container {
+        max-width: 36.25rem;
+        align-self: center;
+
+        .btn__project {
+            &.small {
+                max-width: 20rem;
+            }
+        }
+
+        .btn__github {
+            max-width: 13.75rem;
+        }
+
+    }
+
+}

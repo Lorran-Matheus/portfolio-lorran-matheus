@@ -48,7 +48,7 @@
     border: none;
     opacity: .8;
     background: transparent;
-    color: var(--bg-color);
+    color: #95B5F2;
     font-size: 2.8rem;
     transition: .25s ease-in-out;
     @include displayFlex(row, center, center);
@@ -59,7 +59,7 @@
     }
 
     &:focus{
-        filter: brightness(2);
+        filter: brightness(1.2);
     }
 }
 

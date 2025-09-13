@@ -42,7 +42,7 @@
 .technologies__item {
     max-width: 15%;
     position: relative;
-    // animation: scroll 25s linear alternate infinite;
+    animation: scroll 25s linear alternate infinite;
     @include displayFlex(row, center, center);
 
     img {

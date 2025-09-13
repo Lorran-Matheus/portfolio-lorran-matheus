@@ -1,4 +1,5 @@
-@use '../abstracts/' as *;
+@use '../abstracts/variables' as *;
+@use 'sass:map';
 
 @mixin displayFlex($direction: null, $justify: null, $align: null) {
     display: flex;
@@ -11,4 +12,42 @@
     width: #{$width};
     min-width: #{$min};
     max-width: #{$max};
+}
+
+@mixin desktopWidth($width: 100vw, $min: 90%, $max: 100%) {
+    width: #{$width};
+    min-width: #{$min};
+    max-width: #{$max};
+}
+
+@mixin media-break-min-width($breakpoints: null) {
+    $width: map.get($width-breakpoints, $breakpoints);
+
+    @media screen and (min-width: $width) {
+        @content
+    }
+}
+
+@mixin media-break-max-width($breakpoints: null) {
+    $width: map.get($width-breakpoints, $breakpoints, );
+
+    @media screen and (max-width: $width) {
+        @content
+    }
+}
+
+@mixin media-break-min-height($breakpoints: null) {
+    $height: map.get($height-breakpoints, $breakpoints);
+
+    @media screen and (min-height: $height) {
+        @content
+    }
+}
+
+@mixin media-break-max-height($breakpoints: null) {
+    $height: map.get($height-breakpoints, $breakpoints);
+
+    @media screen and (max-height: $height) {
+        @content
+    }
 }

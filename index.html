@@ -17,7 +17,7 @@
     </head>
     <body>
         <header>
-            <div class="header-container" id="home">
+            <div class="header-container">
                 <div class="logo-container">
                     <img id="logo" src="src/assets/image/logo-dark-mobile.png" alt="logotipo LM" class="logo">
                 </div>
@@ -31,42 +31,10 @@
 
         <main>
             <nav id="menuMobile" class="menu__mobile">    
-                <ul class="menu--container">
-                    <li class="menu__item menu-active" data-section="home">
-                        <a class="menu__link" href="#home">
-                            <div class="menu__icon bi bi-house-door">
-                            </div>
-                            <span class="menu__text">INICIO</span>
-                        </a>
-                    </li>
-
-                    <li class="menu__item " data-section="projects">
-                        <a class="menu__link" href="#projects"><div
-                                class="menu__icon bi bi-window-stack">
-                            </div>
-                            <span class="menu__text">PROJETOS</span>
-                        </a>
-                    </li>
-
-                    <li class="menu__item" data-section="about">
-                        <a class="menu__link" href="#about">
-                            <div class="menu__icon bi bi-person">
-                            </div>
-                            <span class="menu__text">SOBRE</span>
-                        </a>
-                    </li>
-
-                    <li class="menu__item" data-section="contact">
-                        <a class="menu__link" href="#contact">
-                            <div class="menu__icon bi bi-envelope">
-                            </div>
-                            <span class="menu__text">CONTATO</span>
-                        </a>
-                    </li>
-                </ul>
+                <!-- Menu gerado com fetch -->
             </nav>
             
-            <section class="first__content content--container">
+            <section id="home" class="first__content content--container">
                 <div class="first__header">
                     <h1 class="first__title title1">Busco aprender algo novo todos os
                         dias</h1>
@@ -146,97 +114,97 @@
                             React é uma biblioteca JavaScript de código aberto, mantida pelo Facebook, utilizada para construir interfaces de usuário (UIs) de forma eficiente e reutilizável através de componentes, sendo especialmente útil para criar aplicações web complexas e interativas, bem como aplicativos móveis com React Native. 
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/css-icon.svg" alt="Logo CSS">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/css-icon.svg" alt="Logo CSS">
                         <div class="technologies__paragraph modal hidden">
                             CSS (Cascading Style Sheets) é uma linguagem de estilo usada para criar a aparência visual e o layout de documentos web, como páginas HTML, separando o conteúdo da sua apresentação.
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/figma-icon.svg" alt="Logo Figma">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/figma-icon.svg" alt="Logo Figma">
                         <div class="technologies__paragraph modal hidden">
                             Figma é uma plataforma de design baseada na web, colaborativa e gratuita, utilizada por designers, gestores de produto e desenvolvedores para criar e prototipar designs de interfaces digitais.
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/bootstrap-icon.svg" alt="Logo Bootstrap ">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/bootstrap-icon.svg" alt="Logo Bootstrap ">
                         <div class="technologies__paragraph modal hidden">
                             Bootstrap é um framework de código aberto popular e gratuito, usado por desenvolvedores Front-end e Full Stack para criar designs de sites e aplicativos responsivos e com boa experiência do usuário.
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/sass-icon.svg" alt="Logo Sass">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/sass-icon.svg" alt="Logo Sass">
                         <div class="technologies__paragraph modal hidden">
                             SASS (Syntactically Awesome Style Sheets) é um pré-processador CSS que adiciona funcionalidades avançadas ao CSS puro, como variáveis, aninhamento e mixins, para tornar o código mais organizado, reutilizável e fácil de manter.
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/git-icon.svg" alt="Logo Git">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/git-icon.svg" alt="Logo Git">
                         <div class="technologies__paragraph modal hidden">
                             O Git é um sistema de controlo de versão distribuído (DVCS), de código aberto, que permite aos desenvolvedores acompanhar e gerir as alterações nos arquivos de um projeto ao longo do tempo, de forma local e colaborativa.
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/github-icon.svg" alt="Logo Github">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/github-icon.svg" alt="Logo Github">
                         <div class="technologies__paragraph modal hidden">
                             O GitHub é uma plataforma baseada na nuvem para hospedar, compartilhar e gerenciar código-fonte e projetos de software, funcionando como um hub de colaboração para desenvolvedores.
                         </div>
                     </div>
-                    <div class="technologies__item">
+                    <div class="technologies__item tech-hidden">
                         <img src="./src/assets/image/technologies/html-icon.svg" alt="Logo Html">
                         <div class="technologies__paragraph modal hidden">
                             HTML é a sigla para HyperText Markup Language (Linguagem de Marcação de Hipertexto), a linguagem padrão para criar e estruturar páginas web e o seu conteúdo, como textos, imagens e links.
                         </div>
                     </div>
-                    <div class="technologies__item">
+                    <div class="technologies__item tech-hidden">
                         <img src="./src/assets/image/technologies/js-icon.svg" alt="Logo Javascript">
                         <div class="technologies__paragraph modal hidden">
                             JS (JavaScript) é uma linguagem de programação interpretada, de alto nível e baseada em objetos, usada principalmente para criar páginas web dinâmicas e interativas.
                         </div>
                     </div>
-                    <div class="technologies__item">
+                    <div class="technologies__item tech-hidden">
                         <img src="./src/assets/image/technologies/react-icon.svg" alt="Logo React">
                         <div class="technologies__paragraph modal hidden">
                             React é uma biblioteca JavaScript de código aberto, mantida pelo Facebook, utilizada para construir interfaces de usuário (UIs) de forma eficiente e reutilizável através de componentes, sendo especialmente útil para criar aplicações web complexas e interativas, bem como aplicativos móveis com React Native. 
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/css-icon.svg" alt="Logo CSS">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/css-icon.svg" alt="Logo CSS">
                         <div class="technologies__paragraph modal hidden">
                             CSS (Cascading Style Sheets) é uma linguagem de estilo usada para criar a aparência visual e o layout de documentos web, como páginas HTML, separando o conteúdo da sua apresentação.
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/figma-icon.svg" alt="Logo Figma">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/figma-icon.svg" alt="Logo Figma">
                         <div class="technologies__paragraph modal hidden">
                             Figma é uma plataforma de design baseada na web, colaborativa e gratuita, utilizada por designers, gestores de produto e desenvolvedores para criar e prototipar designs de interfaces digitais.
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/bootstrap-icon.svg" alt="Logo Bootstrap ">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/bootstrap-icon.svg" alt="Logo Bootstrap ">
                         <div class="technologies__paragraph modal hidden">
                             Bootstrap é um framework de código aberto popular e gratuito, usado por desenvolvedores Front-end e Full Stack para criar designs de sites e aplicativos responsivos e com boa experiência do usuário.
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/sass-icon.svg" alt="Logo Sass">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/sass-icon.svg" alt="Logo Sass">
                         <div class="technologies__paragraph modal hidden">
                             SASS (Syntactically Awesome Style Sheets) é um pré-processador CSS que adiciona funcionalidades avançadas ao CSS puro, como variáveis, aninhamento e mixins, para tornar o código mais organizado, reutilizável e fácil de manter.
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/git-icon.svg" alt="Logo Git">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/git-icon.svg" alt="Logo Git">
                         <div class="technologies__paragraph modal hidden">
                             O Git é um sistema de controlo de versão distribuído (DVCS), de código aberto, que permite aos desenvolvedores acompanhar e gerir as alterações nos arquivos de um projeto ao longo do tempo, de forma local e colaborativa.
                         </div>
                     </div>
-                    <div class="technologies__item"><img src="./src/assets/image/technologies/github-icon.svg" alt="Logo Github">
+                    <div class="technologies__item tech-hidden"><img src="./src/assets/image/technologies/github-icon.svg" alt="Logo Github">
                         <div class="technologies__paragraph modal hidden">
                             O GitHub é uma plataforma baseada na nuvem para hospedar, compartilhar e gerenciar código-fonte e projetos de software, funcionando como um hub de colaboração para desenvolvedores.
                         </div>
                     </div>
-                    <div class="technologies__item">
+                    <div class="technologies__item tech-hidden">
                         <img src="./src/assets/image/technologies/html-icon.svg" alt="Logo Html">
                         <div class="technologies__paragraph modal hidden">
                             HTML é a sigla para HyperText Markup Language (Linguagem de Marcação de Hipertexto), a linguagem padrão para criar e estruturar páginas web e o seu conteúdo, como textos, imagens e links.
                         </div>
                     </div>
-                    <div class="technologies__item">
+                    <div class="technologies__item tech-hidden">
                         <img src="./src/assets/image/technologies/js-icon.svg" alt="Logo Javascript">
                         <div class="technologies__paragraph modal hidden">
                             JS (JavaScript) é uma linguagem de programação interpretada, de alto nível e baseada em objetos, usada principalmente para criar páginas web dinâmicas e interativas.
                         </div>
                     </div>
-                    <div class="technologies__item">
+                    <div class="technologies__item tech-hidden">
                         <img src="./src/assets/image/technologies/react-icon.svg" alt="Logo React">
                         <div class="technologies__paragraph modal hidden">
                             React é uma biblioteca JavaScript de código aberto, mantida pelo Facebook, utilizada para construir interfaces de usuário (UIs) de forma eficiente e reutilizável através de componentes, sendo especialmente útil para criar aplicações web complexas e interativas, bem como aplicativos móveis com React Native. 

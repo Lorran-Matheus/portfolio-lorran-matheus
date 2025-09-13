@@ -15,13 +15,24 @@ const logo = {
 if (!isMobile) {
   fetch('./src/pages/navbarDesktop.html')
     .then(r => {
-      if (!r) throw new Error('Erro ao gerar a página');
+      if (!r) throw new Error('Erro ao gerar menu desktop');
       return r.text();
     })
     .then(html => {
       document.getElementById('menuDesktop').innerHTML = html;
     })
-    .catch(error => { console.error(`Erro ao carregar página`, error) });
+    .catch(error => { console.error(`Erro ao carregar menu desktop`, error) });
+  resizeTimer();
+} else {
+  fetch('./src/pages/navbarMobile.html')
+  .then(r => {
+      if (!r) throw new Error('Erro ao gerar menu mobile');
+      return r.text();
+    })
+    .then(html => {
+      document.getElementById('menuMobile').innerHTML = html;
+    })
+    .catch(error => { console.error(`Erro ao carregar menu mobile`, error) });
   resizeTimer();
 }
 
@@ -33,8 +44,8 @@ function resizeTimer() {
 
     resizeTimeout = setTimeout(() => {
       if (isMobile) {
-        menuDesktop.classList.add('hidden');
         menuMobile.classList.remove('hidden');
+        menuDesktop.classList.add('hidden');
       } else {
         menuDesktop.classList.remove('hidden');
         menuMobile.classList.add('hidden');
@@ -50,8 +61,6 @@ themeButton.addEventListener('click', () => {
   let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
   html.setAttribute('data-theme', newTheme);
 
-
-  console.log(newTheme)
   if (newTheme === 'light') {
     themeButton.classList.remove('bi-moon-stars')
     themeButton.classList.add('bi-brightness-high')
@@ -160,22 +169,22 @@ window.addEventListener('scroll', () => {
   observer.observe(sections.contact);
 })
 
-const carouselItems = document.querySelectorAll('.technologies__item');
+// const carouselItems = document.querySelectorAll('.technologies__item');
 
-carouselItems.forEach(techItem => {
-  const carouselContainer = carouselItems.parentElement;
+// carouselItems.forEach(techItem => {
+//   const carouselContainer = carouselItems.parentElement;
   
-  techItem.addEventListener('click', () => {
-    techItem.classList.add('tech-active');
-    const modal = techItem.lastElementChild;
+//   techItem.addEventListener('click', () => {
+//     techItem.classList.add('tech-active');
+//     const modal = techItem.lastElementChild;
     
-    if (techItem.classList.contains('tech-active')){
-      modal.classList.add('show-modal');
-    }
+//     if (techItem.classList.contains('tech-active')){
+//       modal.classList.add('show-modal');
+//     }
 
-    modal.addEventListener('click', () => {
-      modal.classList.remove('show-modal');
-    })
-  });
+//     modal.addEventListener('click', () => {
+//       modal.classList.remove('show-modal');
+//     })
+//   });
 
-})
+// })

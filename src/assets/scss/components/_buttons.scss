@@ -34,13 +34,11 @@
     }
 
     &.big {
-        @include mobileWidth(70vw, 85%, 100%);
         align-self: center;
     }
 
     &.small {
         @include displayFlex(row, space-around, center);
-        @include mobileWidth(60vw, 45%, 60%)
     }
 }
 

@@ -1,44 +1,72 @@
-@media screen and (min-width: 0px) {
-//buttons.scss
+@use '../at-rule/mixin' as *;
+
+@media screen and (pointer: coarse) {
+
+    //buttons.scss
+    .btn__project,
+    .btn__github {
+        animation: none !important;
+        transform: none !important;
+    }
+
+    //technologies.scss
+    .technologies {
+
+        &__carousel:hover &__item,
+        &__carousel &__item:focus,
+        img {
+            transform: none !important;
+            animation-play-state: running !important;
+        }
+    }
+}
+
+@include media-break-min-width(xsmall) {
+
+    //buttons.scss
     .btn__project {
         div {
             font-size: .9rem;
         }
+
+        &.small {
+            @include mobileWidth(60vw, 45%, 60%)
+        }
     }
 
+    .carousel__control-next.btn-carousel,
+    .carousel__control-prev.btn-carousel {
+        font-size: 1.8rem;
+    }
 
-//logo-container
+    //logo-container
     .header-container {
+        padding: 1rem 1rem 0;
+        width: 100vw;
+        max-width: 100%;
+        height: 14vh;
+        max-height: 18vh;
+        @include displayFlex(row, space-between, null);
+
+        .logo-container {
+            max-width: 13%;
+        }
+
         .theme-button {
             font-size: 1.3rem;
         }
     }
 
 
-//home.scss
+    //home.scss
     .first__title {
         font-size: 2.5rem;
     }
 }
 
-@media screen and (min-width: 350px) {
-//buttons.scss
-    .btn__project {
-        .btn__icon {
-            font-size: 1.2rem;
-        }
-    }
+@include media-break-min-width(small) {
 
-}
-
-@media screen and (max-width: 380px) {
-    .bi-arrow-up-right {
-        display: none !important;
-    }
-}
-
-@media screen and (min-width: 576px) {
-//buttons.scss
+    //buttons.scss
     .btn__project {
         div {
             font-size: 1.4rem;
@@ -49,30 +77,197 @@
         max-width: 36.25rem;
         align-self: center;
 
-        .btn__project {
-            &.small {
-                max-width: 20rem;
-            }
-        }
-
         .btn__github {
             max-width: 13.75rem;
         }
     }
 
+    .btn__project {
+        &.big {
+            @include mobileWidth(70vw, 85%, 100%);
+        }
 
-//logo-container.scss
+        &.small {
+            max-width: 20rem;
+        }
+    }
+
+    .carousel__control-next.btn-carousel,
+    .carousel__control-prev.btn-carousel {
+        font-size: 2.4rem;
+    }
+
+    //logo-container.scss
     .header-container {
         .theme-button {
             font-size: 2.2rem;
         }
+
+        .menu-desktop__text {
+            font-size: .8rem;
+        }
     }
 
-
-//home.scss
+    //home.scss
     .first__title {
         font-size: 3.5rem;
     }
-
-    
 }
+
+@include media-break-min-width(medium) {
+    //buttons 
+    .about__actions{
+        justify-content: center !important;
+        gap: 2rem;
+        .btn__project.conect{
+            @include desktopWidth(50vw, 20%, 25rem);
+        }
+
+        .btn__github{
+            @include desktopWidth(50vw, 20%, 20rem);
+        }
+    }
+
+    //logo-container.scss
+    .header-container {
+        background-color: var(--bg-navbar);
+        padding: .7rem 5rem;
+        position: fixed;
+        height: 10vh;
+        top: 0;
+        z-index: 15;
+        @include displayFlex(row, space-between, center);
+
+        .logo-container {
+            @include desktopWidth(5rem, 7%, 7%);
+        }
+
+        .theme-button {
+            font-size: 1.5rem;
+        }
+
+        .menu-active {
+            border: none;
+
+            &:has(.menu-desktop__text) .menu-desktop__text {
+                filter: brightness(3);
+
+            }
+        }
+    }
+
+
+    //desktopNavbar.scss
+    .menu__desktop {
+        .menu-desktop--container {
+            @include desktopWidth(45vw, 70%, 27rem);
+
+            .menu-desktop__item .menu-desktop__text {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .content--container {
+        padding: 1rem 5rem !important;
+    }
+
+    //home.scss
+    .first__content {
+        margin-top: 6.3rem;
+
+        .first__header {
+            padding-left: .4rem;
+            max-width: 65vw;
+        }
+
+        .btn__project.big {
+            align-self: flex-start;
+        }
+    }
+
+    //projects.scss
+    .second__content {
+        .project-1 {
+            .carousel__container {
+                @include desktopWidth(100vw, 100%, 100%);
+
+                .carousel__body {
+                    @include desktopWidth(100vw, 100%, 100%);
+                }
+
+                .carousel__text-cotainer {}
+            }
+        }
+    }
+}
+
+@include media-break-min-width(large) {
+
+    //buttons.scss
+    .project__actions {
+        gap: 2rem
+    }
+
+    .btn__project {
+        &.big {
+            @include mobileWidth(50vw, null, 32rem);
+        }
+
+        &.small {
+            @include mobileWidth(50vw, 30%, 23rem);
+        }
+    }
+
+    //projects.scss
+    .second__content {
+        .project-1 {
+            display: grid;
+            grid-template-columns: 60% 40%;
+
+            .carousel__container {
+                @include desktopWidth(100vw, 100%, 100%);
+
+                .carousel__body {
+                    @include desktopWidth(100vw, 100%, 100%);
+                }
+
+                .carousel__text-cotainer {}
+            }
+        }
+    }
+
+    footer {
+        padding: 3rem 11rem 20vh !important;
+    }
+}
+
+
+@media screen and (max-width: 380px) {
+    .bi-arrow-up-right {
+        display: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @include media-break-max-height(small) {
+//     .technologies__container {
+//         height: 80vh;
+
+//         .technologies__carousel {
+//             max-height: 60vh;
+//             height: 100%;
+//         }
+//     }
+// }

@@ -9,6 +9,10 @@ $border-logo-color: #1C2F66;
 $accordion-bg-header: #5169BA;
 $accordion-bg-body: #95B5F2;
 
+$color-gradient-top-light: #2c406b;
+$color-gradient-middle-light: #394879b3;
+$color-gradient-bottom-light: #4b5c8db3;
+
 %variables-theme {
     --text-color: #{$text-color};
     --text-color-secondary: #{$text-color-secondary};
@@ -20,6 +24,10 @@ $accordion-bg-body: #95B5F2;
     --border-logo-color: #{$border-logo-color};
     --accordion-bg-header: #{$accordion-bg-header};
     --accordion-bg-body: #{$accordion-bg-body};
+
+    --color-gradient-top: #{$color-gradient-top-light};
+    --color-gradient-middle: #{$color-gradient-middle-light};
+    --color-gradient-bottom: #{$color-gradient-bottom-light};
 }
 
 :root[data-theme="light"] {
@@ -37,6 +45,10 @@ $accordion-bg-body: #95B5F2;
     $border-logo-color: #E2E9F0;
     $accordion-bg-header: #2C406B;
     $accordion-bg-body: #4E6096;
+
+    $color-gradient-top-dark: #2c406b;
+    $color-gradient-middle-dark: #394879b3;
+    $color-gradient-bottom-dark: #4b5c8db3;
 
     --text-color: #{$text-color};
     --text-color-secondary: #{$text-color-secondary};

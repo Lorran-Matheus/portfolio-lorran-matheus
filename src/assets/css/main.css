@@ -465,8 +465,11 @@ html {
 }
 .first__links-container .first__link {
   font-size: 2rem;
-  padding-right: 1rem;
+  margin-right: 0.5rem;
   color: var(--text-color);
+}
+.first__links-container .first__link:hover {
+  opacity: 0.8;
 }
 
 .third__content {
@@ -497,6 +500,22 @@ html {
 }
 .about__text.text2 {
   word-spacing: 0.6rem;
+}
+
+.about__formation, .about__experience {
+  padding-left: 0.5rem;
+}
+.about__formation .formation__subtitle, .about__experience .formation__subtitle {
+  text-indent: 0.5rem;
+}
+.about__formation .flex-container, .about__experience .flex-container {
+  padding-left: 0.5rem;
+}
+.about__experience .experience__subtitle {
+  text-indent: 0.5rem;
+}
+.about__experience .experience__paragraph {
+  text-align: left;
 }
 
 .accordion {
@@ -538,10 +557,14 @@ html {
 }
 .accordion__header:hover {
   cursor: pointer;
-  opacity: 0.8;
 }
 .accordion__header .accordion__title {
+  position: relative;
   transition: 0.7s ease-in-out;
+}
+.accordion__header .accordion__title:hover {
+  text-shadow: 0.35rem 0.35rem 0.2rem var(--text-color-secondary);
+  left: 0.5rem;
 }
 .accordion__header .icon {
   transition: 0.2s linear;
@@ -558,6 +581,16 @@ html {
   max-width: 100%;
   animation: spawn-top 0.25s ease 1 forwards;
 }
+.accordion__body .accordion__text {
+  color: #fff;
+}
+.accordion__body .title {
+  font-weight: 600;
+}
+.accordion__body .subtitle {
+  font-weight: 500;
+  text-indent: 2rem;
+}
 .accordion__paragraph {
   display: flex;
   flex-direction: column;
@@ -569,6 +602,10 @@ html {
   padding-left: 2rem;
   animation: spawn-right 1.5s ease-in-out 1 forwards;
 }
+.skills__item {
+  padding-bottom: 0.5rem;
+  color: #fff;
+}
 .skills__item::marker {
   content: "•  ";
   animation: spawn-right 1.5s ease-in-out 1 forwards;
@@ -578,6 +615,9 @@ html {
   padding: 1.4rem 1.1rem;
   justify-content: center;
   background: linear-gradient(180deg, rgb(44, 64, 107) 65%, rgb(61, 77, 128) 85%, rgba(78, 96, 150, 0.7) 100%);
+}
+.active .accordion__header:hover {
+  background: linear-gradient(180deg, rgba(40, 59, 99, 0.7) 65%, rgba(57, 72, 121, 0.7) 85%, rgba(75, 92, 141, 0.7) 100%);
 }
 .active:has(.accordion__body) .accordion__body {
   display: flex;

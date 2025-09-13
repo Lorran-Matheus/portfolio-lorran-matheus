@@ -26,7 +26,11 @@
 
     .first__link {
         font-size: 2rem;
-        padding-right: 1rem;
+        margin-right: .5rem;
         color: var(--text-color);
+
+        &:hover{
+            opacity: .8;
+        }
     }
 }

@@ -25,13 +25,40 @@
 
     &.text1 {
         word-spacing: .8rem;
-        line-height: 1.4rem; 
+        line-height: 1.4rem;
     }
 
-    &.text2{
-        word-spacing: .6rem; 
+    &.text2 {
+        word-spacing: .6rem;
     }
 }
+
+.about {
+    &__formation {
+        padding-left: .5rem;
+
+        .formation__subtitle {
+            text-indent: .5rem;
+        }
+
+        .flex-container {
+            padding-left: .5rem;
+        }
+    }
+
+    &__experience{
+        @extend .about__formation;
+
+        .experience__subtitle {
+            text-indent: .5rem;
+        }
+
+        .experience__paragraph{
+            text-align: left;
+        }
+    }
+}
+
 
 .accordion {
     @include mobileWidth(90%, 90vw, 20rem);
@@ -60,11 +87,16 @@
 
         &:hover {
             cursor: pointer;
-            opacity: .8;
         }
 
         .accordion__title {
+            position: relative;
             transition: .7s ease-in-out;
+
+            &:hover {
+                text-shadow: .35rem .35rem .2rem var(--text-color-secondary);
+                left: .5rem;
+            }
         }
 
         .icon {
@@ -81,6 +113,19 @@
         justify-content: center;
         @include mobileWidth(100%, 100%, 100%);
         animation: spawn-top .25s ease 1 forwards;
+
+        .accordion__text {
+            color: #fff;
+        }
+
+        .title {
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-weight: 500;
+            text-indent: 2rem
+        }
     }
 
     &__paragraph {
@@ -96,6 +141,11 @@
         animation: spawn-right 1.5s ease-in-out 1 forwards;
     }
 
+    &__item {
+        padding-bottom: .5rem;
+        color: #fff;
+    }
+
     &__item::marker {
         content: "•  ";
         animation: spawn-right 1.5s ease-in-out 1 forwards;
@@ -109,7 +159,12 @@
         background: linear-gradient(180deg, rgba(44, 64, 107, 1) 65%,
                 rgba(61, 77, 128, 1) 85%,
                 rgba(78, 96, 150, .7) 100%);
-        ;
+
+        &:hover {
+            background: linear-gradient(180deg, rgba(40, 59, 99, 0.7) 65%,
+                    rgba(57, 72, 121, 0.7) 85%,
+                    rgba(75, 92, 141, 0.7) 100%);
+        }
     }
 
     &:has(.accordion__body) .accordion__body {

@@ -1,4 +1,5 @@
 @use '../abstracts/' as *;
+@use '../at-rule/mediaQ' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -37,49 +38,4 @@ html {
     color: #E2E9F0;
     p {font-size: 1.4rem;}
     span{font-size: 1.8rem}
-}
-
-@media screen and (min-width: 0px) {
-    .header-container {
-        .theme-button {
-            font-size: 1.3rem;
-        }
-    }
-
-    .first__title {
-        font-size: 2.5rem;
-    }
-
-    .btn__project {
-        div {
-            font-size: .9rem;
-        }
-    }
-}
-
-@media screen and (min-width: 350px) {
-    .btn__project {
-        .btn__icon {
-            font-size: 1.2rem;
-        }
-    }
-
-}
-
-@media screen and (min-width: 576px) {
-    .first__title {
-        font-size: 3.5rem;
-    }
-
-    .btn__project {
-        div {
-            font-size: 1.4rem;
-        }
-    }
-
-    .header-container {
-        .theme-button {
-            font-size: 2.2rem;
-        }
-    }
 }

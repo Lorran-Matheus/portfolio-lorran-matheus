@@ -5,3 +5,93 @@
 .animation-moon{
     transform: rotateY(180deg);
 }
+
+@keyframes spawn-top {
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    from {
+        transform: translateY(-20%);
+        opacity: .1;
+    }
+}
+
+@keyframes spawn-right {
+    0% {
+        transform: translateX(20%);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(5%);
+        opacity: .4;
+    }
+
+    50% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(90%);
+    }
+
+    100% {
+        transform: translateX(-1900%);
+    }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes moveBackground {
+    0% {
+        background: var(--btn-hover-gradient);
+        background-size: 400% 400%;
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background: var(--btn-hover-gradient);
+        background-size: 400% 400%;
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background: var(--btn-hover-gradient);
+        background-size: 400% 400%;
+        background-position: 100% 0%;
+    }
+}
+
+@keyframes moveBackground-2 {
+    0% {
+        background: var(--btn-secondary-hover-gradient);
+        background-size: 400% 400%;
+        background-position: 100% 0%;
+    }
+
+    50% {
+        background: var(--btn-secondary-hover-gradient);
+        background-size: 400% 400%;
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background: var(--btn-secondary-hover-gradient);
+        background-size: 400% 400%;
+        background-position: 0% 0%;
+    }
+}

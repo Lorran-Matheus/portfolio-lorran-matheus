@@ -4,7 +4,7 @@
   "description": "Portfolio Lorran Matheus",
   "main": "index.js",
   "scripts": {
-    "watch-sass": "sass -w src/assets/scss/main.scss src/assets/css/main.css "
+    "watch-sass": "sass --watch src/assets/scss/main.scss src/assets/css/main.css --style=compressed"
   },
   "author": "Lorran Matheus",
   "license": "ISC",

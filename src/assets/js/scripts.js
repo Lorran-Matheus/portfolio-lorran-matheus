@@ -1,3 +1,5 @@
+// TODO -> Aplicar atualização de tela no resize, de forma que não comprometa o mobile.
+
 const themeButton = document.getElementById('theme-button');
 const image = document.getElementById('logo');
 const isMobile = window.matchMedia("(max-width: 768px)").matches;
@@ -134,28 +136,6 @@ const sections = {
   contact: document.getElementById('contact')
 };
 
-// console.log(sections)
-
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach(section => {
-//     const currentSection = section.target.id;
-
-//     if (section.isIntersecting) {
-//       itemsList.forEach(item => {
-//         const itemActive = item.classList.contains(`menu-active`);
-//         if (!itemActive) {
-//           item.classList.add(`menu-active`);
-//         }
-//       });
-//     }
-//     else {
-//       itemsList.forEach(item => {
-//         item.classList.remove(`menu-active`)
-//       });
-//     }
-//   });
-// })
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(section => {
     const currentSection = section.target.id;
@@ -178,4 +158,24 @@ window.addEventListener('scroll', () => {
   observer.observe(sections.projects);
   observer.observe(sections.about);
   observer.observe(sections.contact);
+})
+
+const carouselItems = document.querySelectorAll('.technologies__item');
+
+carouselItems.forEach(techItem => {
+  const carouselContainer = carouselItems.parentElement;
+  
+  techItem.addEventListener('click', () => {
+    techItem.classList.add('tech-active');
+    const modal = techItem.lastElementChild;
+    
+    if (techItem.classList.contains('tech-active')){
+      modal.classList.add('show-modal');
+    }
+
+    modal.addEventListener('click', () => {
+      modal.classList.remove('show-modal');
+    })
+  });
+
 })

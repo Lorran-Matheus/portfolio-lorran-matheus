@@ -1,1 +1,78 @@
-/*teste*/
+@media screen and (min-width: 0px) {
+//buttons.scss
+    .btn__project {
+        div {
+            font-size: .9rem;
+        }
+    }
+
+
+//logo-container
+    .header-container {
+        .theme-button {
+            font-size: 1.3rem;
+        }
+    }
+
+
+//home.scss
+    .first__title {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 350px) {
+//buttons.scss
+    .btn__project {
+        .btn__icon {
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+    .bi-arrow-up-right {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 576px) {
+//buttons.scss
+    .btn__project {
+        div {
+            font-size: 1.4rem;
+        }
+    }
+
+    .actions__container {
+        max-width: 36.25rem;
+        align-self: center;
+
+        .btn__project {
+            &.small {
+                max-width: 20rem;
+            }
+        }
+
+        .btn__github {
+            max-width: 13.75rem;
+        }
+    }
+
+
+//logo-container.scss
+    .header-container {
+        .theme-button {
+            font-size: 2.2rem;
+        }
+    }
+
+
+//home.scss
+    .first__title {
+        font-size: 3.5rem;
+    }
+
+    
+}

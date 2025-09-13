@@ -1,4 +1,6 @@
 @use '../at-rule/mixin' as *;
+@use '../at-rule/keyframes' as *;
+
 
 .third__content {
     @include displayFlex(column, null, null);
@@ -46,14 +48,14 @@
         }
     }
 
-    &__experience{
+    &__experience {
         @extend .about__formation;
 
         .experience__subtitle {
             text-indent: .5rem;
         }
 
-        .experience__paragraph{
+        .experience__paragraph {
             text-align: left;
         }
     }
@@ -94,7 +96,7 @@
             transition: .7s ease-in-out;
 
             &:hover {
-                text-shadow: .35rem .35rem .2rem var(--text-color-secondary);
+                text-shadow: .35rem .30rem .28rem var(--text-color-secondary);
                 left: .5rem;
             }
         }
@@ -115,7 +117,7 @@
         animation: spawn-top .25s ease 1 forwards;
 
         .accordion__text {
-            color: #fff;
+            color: var(--text-color-secondary);
         }
 
         .title {
@@ -143,7 +145,7 @@
 
     &__item {
         padding-bottom: .5rem;
-        color: #fff;
+        color: var(--text-color);
     }
 
     &__item::marker {
@@ -156,23 +158,20 @@
     .accordion__header {
         padding: 1.4rem 1.1rem;
         justify-content: center;
-        background: linear-gradient(180deg, #2c406b 65%,
-                rgba(61, 77, 128, 1) 85%,
-                rgba(78, 96, 150, .7) 100%);
+        background: var(--gradient-header);
 
         &:hover {
-            background: linear-gradient(180deg, rgba(40, 59, 99, 0.7) 65%,
-                    #394879b3 85%,
-                    #4b5c8db3 100%);
+            background: var(--gradient-header-hover);
         }
+    }
+
+    &:has(.accordion__header:hover) .accordion__body {
+        background: var(--gradient-body-hover)
     }
 
     &:has(.accordion__body) .accordion__body {
         display: flex;
-        background: linear-gradient(180deg, rgba(78, 96, 150, .7) 90%,
-                rgba(61, 77, 128, .7) 95%,
-                rgba(44, 64, 107, .7) 100%);
-        ;
+        background: var(--gradient-body);
     }
 
     &:has(.icon) .icon {
@@ -183,34 +182,5 @@
 
     &:has(.icon) .accordion__title {
         transform: translateX(-10%);
-    }
-}
-
-@keyframes spawn-top {
-    to {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-
-    from {
-        transform: translateY(-20%);
-        opacity: .1;
-    }
-}
-
-@keyframes spawn-right {
-    0% {
-        transform: translateX(20%);
-        opacity: 0;
-    }
-
-    50% {
-        transform: translateX(5%);
-        opacity: .4;
-    }
-
-    50% {
-        transform: translateX(0%);
-        opacity: 1;
     }
 }

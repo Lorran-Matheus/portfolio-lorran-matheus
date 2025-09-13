@@ -1,4 +1,6 @@
 @use '../at-rule/mixin' as *;
+@use '../at-rule/keyframes' as *;
+@use '../at-rule/mediaQ' as *;
 
 .btn {
     cursor: pointer;
@@ -19,6 +21,13 @@
     border-radius: 2rem;
     border: 2px solid var(--text-color);
     background-color: var(--bg-btn);
+    transition: .5s;
+
+    &:hover {
+        transform: scale(1.08);
+        transition: transform .8s;
+        animation: moveBackground 1s linear forwards;
+    }
 
     div {
         @include displayFlex(row, space-around, center);
@@ -39,11 +48,18 @@
     padding: .9rem 1.5rem;
     border-radius: .3rem;
     background-color: var(--bg-btn-secondary);
+    transition: .5s;
     @include displayFlex(row, center, center);
     @include mobileWidth(30vw, 35%, 40%);
+
+    &:hover {
+        transform: scale(1.08);
+        transition: transform .8s;
+        animation: moveBackground-2 1s linear forwards;
+    }
 }
 
-.btn-carousel{
+.btn-carousel {
     position: absolute;
     border: none;
     opacity: .8;
@@ -53,12 +69,12 @@
     transition: .25s ease-in-out;
     @include displayFlex(row, center, center);
 
-    &:hover{
+    &:hover {
         cursor: pointer;
         transform: scale(1.3);
     }
 
-    &:focus{
+    &:focus {
         filter: brightness(1.2);
     }
 }
@@ -67,29 +83,8 @@
     width: 100%;
     max-width: 100vw;
     @include displayFlex(row, space-between, center);
-}
 
-@media screen and (max-width: 380px) {
-    .bi-arrow-up-right {
-        display: none !important;
+    .conect {
+        min-width: 50vw;
     }
-}
-
-@media screen and (min-width: 576px) {
-    .actions__container {
-        max-width: 36.25rem;
-        align-self: center;
-
-        .btn__project {
-            &.small {
-                max-width: 20rem;
-            }
-        }
-
-        .btn__github {
-            max-width: 13.75rem;
-        }
-
-    }
-
 }

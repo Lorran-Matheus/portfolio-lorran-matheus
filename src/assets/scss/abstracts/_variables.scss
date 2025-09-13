@@ -9,9 +9,13 @@ $border-logo-color: #1C2F66;
 $accordion-bg-header: #5169BA;
 $accordion-bg-body: #95B5F2;
 
-$color-gradient-top-light: #2c406b;
-$color-gradient-middle-light: #394879b3;
-$color-gradient-bottom-light: #4b5c8db3;
+$gradient-header: linear-gradient(180deg, #5169BA 60%, #5169bad0 80%, #4b62abd4 100%);
+$gradient-header-hover: linear-gradient(180deg, #5169BA 65%, #5169BA 75%, #435797 100%);
+$gradient-body: linear-gradient(180deg, #4b62abd4 30%, #81a0d9 95%, #5169BA 100%);
+$gradient-body-hover: linear-gradient(180deg, #435797 10%, #81a0d9 35%, #5169BA 99%);
+
+$btn-hover-gradient: linear-gradient(90deg, #0a1948 0%, #041547 40%, #000000 60%);
+$btn-secondary-hover-gradient: linear-gradient(90deg, #04164b 0%, #041547 40%, #5169BA 60%);
 
 %variables-theme {
     --text-color: #{$text-color};
@@ -25,9 +29,13 @@ $color-gradient-bottom-light: #4b5c8db3;
     --accordion-bg-header: #{$accordion-bg-header};
     --accordion-bg-body: #{$accordion-bg-body};
 
-    --color-gradient-top: #{$color-gradient-top-light};
-    --color-gradient-middle: #{$color-gradient-middle-light};
-    --color-gradient-bottom: #{$color-gradient-bottom-light};
+    --gradient-header: #{$gradient-header};
+    --gradient-header-hover: #{$gradient-header-hover};
+    --gradient-body: #{$gradient-body};
+    --gradient-body-hover: #{$gradient-body-hover};
+
+    --btn-hover-gradient: #{$btn-hover-gradient};
+    --btn-secondary-hover-gradient: #{$btn-secondary-hover-gradient};
 }
 
 :root[data-theme="light"] {
@@ -46,9 +54,13 @@ $color-gradient-bottom-light: #4b5c8db3;
     $accordion-bg-header: #2C406B;
     $accordion-bg-body: #4E6096;
 
-    $color-gradient-top-dark: #2c406b;
-    $color-gradient-middle-dark: #394879b3;
-    $color-gradient-bottom-dark: #4b5c8db3;
+    $gradient-header: linear-gradient(180deg, #2c406b 60%, #2c406b 80%, #5c70aa 100%);
+    $gradient-header-hover: linear-gradient(180deg, #2C406B 25%, #394879b3 75%, #4E6096 100%);
+    $gradient-body: linear-gradient(180deg, #5c70aa 50%, #4E6096 85%, #394879b3 100%);
+    $gradient-body-hover: linear-gradient(180deg, #4E6096 10%, #4E6096 35%, #394879b3 90%);
+
+    $btn-hover-gradient: linear-gradient(90deg, #0a1948 0%, #061237 30%, #000000 80%);
+    $btn-secondary-hover-gradient: linear-gradient(90deg, #2b4696 0%, #041547 55%, #5169BA 70%);
 
     --text-color: #{$text-color};
     --text-color-secondary: #{$text-color-secondary};
@@ -60,6 +72,14 @@ $color-gradient-bottom-light: #4b5c8db3;
     --border-logo-color: #{$border-logo-color};
     --accordion-bg-header: #{$accordion-bg-header};
     --accordion-bg-body: #{$accordion-bg-body};
+
+    --gradient-header: #{$gradient-header};
+    --gradient-header-hover: #{$gradient-header-hover};
+    --gradient-body: #{$gradient-body};
+    --gradient-body-hover: #{$gradient-body-hover};
+
+    --btn-hover-gradient: #{$btn-hover-gradient};
+    --btn-secondary-hover-gradient: #{$btn-secondary-hover-gradient};
     @extend %variables-theme;
 }
 

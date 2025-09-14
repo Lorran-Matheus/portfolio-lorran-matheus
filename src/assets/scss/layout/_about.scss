@@ -7,16 +7,20 @@
     gap: .9rem;
 }
 
-.photo__container {
-    display: grid;
-    grid-template-columns: 40% 60%;
+.third__content-container1 {
+    @include displayFlex(column);
     gap: 1rem;
+}
 
+.photo__container {
+    @include displayFlex(row, center, center);
+    
     .about__photo {
         max-width: 50vw;
         aspect-ratio: 1/1;
-
+        
         img {
+            border-radius: 2rem;
             width: 100%;
         }
     }

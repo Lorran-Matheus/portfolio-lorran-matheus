@@ -29,6 +29,10 @@
             font-size: .9rem;
         }
 
+        &.big {
+            @include mobileWidth(70vw, 60%, 60%);
+        }
+
         &.small {
             @include mobileWidth(60vw, 45%, 60%)
         }
@@ -44,7 +48,7 @@
         padding: 1rem 1rem 0;
         width: 100vw;
         max-width: 100%;
-        height: 14vh;
+        // height: 14vh;
         max-height: 18vh;
         @include displayFlex(row, space-between, null);
 
@@ -84,7 +88,7 @@
 
     .btn__project {
         &.big {
-            @include mobileWidth(70vw, 85%, 100%);
+            @include mobileWidth(70vw, 60%, 80%);
         }
 
         &.small {
@@ -115,15 +119,17 @@
 }
 
 @include media-break-min-width(medium) {
+
     //buttons 
-    .about__actions{
+    .about__actions {
         justify-content: center !important;
         gap: 2rem;
-        .btn__project.conect{
+
+        .btn__project.conect {
             @include desktopWidth(50vw, 20%, 25rem);
         }
 
-        .btn__github{
+        .btn__github {
             @include desktopWidth(50vw, 20%, 20rem);
         }
     }
@@ -133,7 +139,7 @@
         background-color: var(--bg-navbar);
         padding: .7rem 5rem;
         position: fixed;
-        height: 10vh;
+        // height: 5rem;
         top: 0;
         z-index: 15;
         @include displayFlex(row, space-between, center);
@@ -187,7 +193,8 @@
     }
 
     //projects.scss
-    .second__content {
+    .second__content.content--container {
+        gap: 0;
         .project-1 {
             .carousel__container {
                 @include desktopWidth(100vw, 100%, 100%);
@@ -211,19 +218,28 @@
 
     .btn__project {
         &.big {
-            @include mobileWidth(50vw, null, 32rem);
+            @include mobileWidth(70vw, 40%, 26rem);
         }
 
         &.small {
-            @include mobileWidth(50vw, 30%, 23rem);
+            @include mobileWidth(50vw, 30%, 15rem);
         }
     }
 
+    // //logo-container.scss
+    // .header-container .logo-container{
+    //     width: 1rem;
+    //     height: 1rem;
+    //     max-width: 1rem;
+    // }
+
     //projects.scss
     .second__content {
-        .project-1 {
+        .project__container {
             display: grid;
-            grid-template-columns: 60% 40%;
+            grid-template-areas: "area1 area2";
+            grid-template-rows: 1fr;
+            gap: 1rem;
 
             .carousel__container {
                 @include desktopWidth(100vw, 100%, 100%);
@@ -231,14 +247,79 @@
                 .carousel__body {
                     @include desktopWidth(100vw, 100%, 100%);
                 }
-
-                .carousel__text-cotainer {}
             }
+        }
+
+        .project-1,
+        .project-3 {
+            grid-template-columns: 60% 40%;
+
+            .carousel__container {
+                grid-area: area1;
+            }
+
+            .project__content {
+                grid-area: area2;
+                gap: .8rem;
+                @include displayFlex(column, center, center)
+            }
+
+            .project__content-text {
+                max-height: 30%;
+                overflow: auto;
+            }
+        }
+
+        .project-2 {
+            grid-template-columns: 40% 60%;
+
+            .carousel__container {
+                grid-area: area2;
+            }
+
+            .project__content {
+                grid-area: area1;
+                gap: .8rem;
+                @include displayFlex(column, center, center)
+            }
+
+            .project__content-text {
+                max-height: 30%;
+                overflow: auto;
+            }
+        }
+    }
+
+    //about.scss
+    .third__content{
+        .about__title{
+            font-size: 2rem;
+        }
+        .about__text-container{
+            font-size: 1.4rem;
         }
     }
 
     footer {
         padding: 3rem 11rem 20vh !important;
+    }
+}
+
+@include media-break-min-width(xlarge) {
+
+    //buttons.scss
+    // .btn__project {
+    //     &.big {
+    //         @include mobileWidth(50vw, null, 32rem);
+    //     }
+
+    //     &.small {
+    //         @include mobileWidth(50vw, 30%, 23rem);
+    //     }
+    // }
+
+    .first__content.content--container{
+        margin-top: 10rem;
     }
 }
 

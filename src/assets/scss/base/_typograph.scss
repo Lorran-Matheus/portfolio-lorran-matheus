@@ -1,5 +1,6 @@
 @use '../abstracts/' as *;
 @use '../at-rule/mediaQ' as *;
+@use '../at-rule/mixin' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -9,11 +10,11 @@ html {
     font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
-.achivo{
+.achivo {
     font-family: Archivo;
 }
 
-.poppins{
+.poppins {
     font-family: Poppins;
 }
 
@@ -36,6 +37,23 @@ html {
 
 .accordion__header {
     color: #E2E9F0;
-    p {font-size: 1.4rem;}
-    span{font-size: 1.8rem}
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    span {
+        font-size: 1.8rem
+    }
+}
+
+@include media-break-min-width(medium) {
+    //about.scss
+    .about__title.title2, .project__title1 {
+        font-size: 3rem;
+    }
+
+    .about__text-container {
+        font-size: 1.4rem;
+    }
 }

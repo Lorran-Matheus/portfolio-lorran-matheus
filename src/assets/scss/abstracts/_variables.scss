@@ -5,6 +5,7 @@ $bg-color-secondary: #061237;
 $bg-btn: #1C2F66;
 $bg-btn-secondary: #5169BA;
 $bg-navbar: #4E6096;
+$bg-navbar-active: #4e6096d3;
 $border-navbar: #95B5F2;
 $border-logo-color: #1C2F66;
 $accordion-bg-header: #5169BA;
@@ -26,6 +27,7 @@ $btn-secondary-hover-gradient: linear-gradient(90deg, #04164b 0%, #041547 40%, #
     --bg-btn: #{$bg-btn};
     --bg-btn-secondary: #{$bg-btn-secondary};
     --bg-navbar: #{$bg-navbar};
+    --bg-navbar-active: #{$bg-navbar-active};
     --border-navbar: #{$border-navbar};
     --border-logo-color: #{$border-logo-color};
     --accordion-bg-header: #{$accordion-bg-header};
@@ -52,6 +54,7 @@ $btn-secondary-hover-gradient: linear-gradient(90deg, #04164b 0%, #041547 40%, #
     $bg-btn: #141213;
     $bg-btn-secondary: #5169BA;
     $bg-navbar: #141213;
+    $bg-navbar-active: #141213d3;
     $border-navbar: #E2E9F0;
     $border-logo-color: #E2E9F0;
     $accordion-bg-header: #2C406B;
@@ -72,6 +75,7 @@ $btn-secondary-hover-gradient: linear-gradient(90deg, #04164b 0%, #041547 40%, #
     --bg-btn: #{$bg-btn};
     --bg-btn-secondary: #{$bg-btn-secondary};
     --bg-navbar: #{$bg-navbar};
+    --bg-navbar-active: #{$bg-navbar-active};
     --border-navbar: #{$border-navbar};
     --border-logo-color: #{$border-logo-color};
     --accordion-bg-header: #{$accordion-bg-header};

@@ -39,6 +39,10 @@
         font-size: .8rem;
     }
 
+    &.menu-active{
+        background-color: var(--bg-navbar-active);
+    }
+
     &.menu-active:has(.menu-mobile__link) .menu-mobile__link {
         opacity: 1;
         font-weight: 600;

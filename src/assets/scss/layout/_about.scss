@@ -4,66 +4,68 @@
 
 .third__content {
     @include displayFlex(column, null, null);
-    gap: .9rem;
+    gap: 7rem;
 }
 
 .third__content-container1 {
     @include displayFlex(column);
-    gap: 1rem;
-}
+    gap: 2rem;
 
-.photo__container {
-    @include displayFlex(row, center, center);
-    
-    .about__photo {
-        max-width: 50vw;
-        aspect-ratio: 1/1;
-        
-        img {
-            border-radius: 2rem;
-            width: 100%;
+    .photo__container {
+        @include displayFlex(row, center, center);
+
+        .about__photo {
+            max-width: 50vw;
+            aspect-ratio: 1/1;
+
+            img {
+                border-radius: 2rem;
+                width: 100%;
+            }
         }
     }
 }
 
-.about__text {
-    align-self: flex-end;
-
-    &.text1 {
-        word-spacing: .8rem;
+.about__text-container {
+    gap: 1rem;
+    
+    .about__text.text1 {
+        word-spacing: .5rem;
         line-height: 1.4rem;
+        align-self: flex-end;
+
     }
 
-    &.text2 {
+    .about__text.text2 {
         word-spacing: .6rem;
+        align-self: flex-end;
+    }
+
+    .about__language {
+        width: 100%;
     }
 }
 
-.about {
-    &__formation {
+.third__content-container2 {
+
+    .about__formation {
         padding-left: .5rem;
 
-        .formation__subtitle {
-            text-indent: .5rem;
-        }
 
         .flex-container {
             padding-left: .5rem;
         }
     }
 
-    &__experience {
+    .about__experience {
         @extend .about__formation;
-
-        .experience__subtitle {
-            text-indent: .5rem;
-        }
 
         .experience__paragraph {
             text-align: left;
         }
     }
 }
+
 
 
 .accordion {
@@ -170,10 +172,11 @@
     }
 
     &:has(.accordion__header:hover) .accordion__body {
-        background: var(--gradient-body-hover)
+        background: var(--gradient-body-hover);
     }
 
     &:has(.accordion__body) .accordion__body {
+        
         display: flex;
         background: var(--gradient-body);
     }

@@ -30,17 +30,21 @@
         }
 
         &.big {
-            @include mobileWidth(70vw, 60%, 60%);
+            @include mobileWidth(80vw, 60%, 80%);
         }
 
         &.small {
-            @include mobileWidth(60vw, 45%, 60%)
+            @include mobileWidth(null, 35%, 60%)
         }
     }
 
     .carousel__control-next.btn-carousel,
     .carousel__control-prev.btn-carousel {
         font-size: 1.8rem;
+    }
+
+    .bi-arrow-up-right {
+        display: none;
     }
 
     //logo-container
@@ -57,10 +61,14 @@
         }
 
         .theme-button {
-            font-size: 1.3rem;
+            font-size: 1.8rem;
         }
     }
 
+    //about.scss
+    .about__text-container {
+        @include displayFlex(column, center, center);
+    }
 
     //home.scss
     .first__title {
@@ -88,7 +96,7 @@
 
     .btn__project {
         &.big {
-            @include mobileWidth(70vw, 60%, 80%);
+            @include mobileWidth(null, 60%, 70%);
         }
 
         &.small {
@@ -101,12 +109,12 @@
         font-size: 2.4rem;
     }
 
+    .bi-arrow-up-right {
+        display: inline;
+    }
+
     //logo-container.scss
     .header-container {
-        .theme-button {
-            font-size: 2.2rem;
-        }
-
         .menu-desktop__text {
             font-size: .8rem;
         }
@@ -149,7 +157,7 @@
         }
 
         .theme-button {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
 
         .menu-active {
@@ -194,7 +202,6 @@
 
     //projects.scss
     .second__content.content--container {
-        gap: 0;
         .project-1 {
             .carousel__container {
                 @include desktopWidth(100vw, 100%, 100%);
@@ -203,8 +210,15 @@
                     @include desktopWidth(100vw, 100%, 100%);
                 }
 
-                .carousel__text-cotainer {}
             }
+        }
+    }
+
+    //.contact.scss
+    .contact__main {
+        .btn.btn__project.big {
+            font-size: 1.3rem;
+            font-weight: 300;
         }
     }
 }
@@ -226,12 +240,14 @@
         }
     }
 
-    // //logo-container.scss
-    // .header-container .logo-container{
-    //     width: 1rem;
-    //     height: 1rem;
-    //     max-width: 1rem;
-    // }
+    //logo-container.scss
+    .header-container {
+        justify-content: space-around;
+
+        .logo-container {
+            @include desktopWidth(3rem, 3rem, 3rem);
+        }
+    }
 
     //projects.scss
     .second__content {
@@ -291,12 +307,90 @@
     }
 
     //about.scss
-    .third__content{
-        .about__title{
-            font-size: 2rem;
+    .third__content {
+        @include displayFlex(column, center, center);
+
+        .third__content-container1 {
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: 35% 60%;
+            grid-template-rows: 15% 75% 10%;
+            grid-template-areas:
+                "top1 top2"
+                "middle1 middle2"
+                "bottom1 bottom2";
+
+            .about__title {
+                align-self: center;
+                font-weight: 200;
+                font-size: 3rem;
+                grid-area: top2;
+            }
+
+            .photo__container {
+                margin-top: 6rem;
+                place-self: flex-start;
+                grid-area: top1, ;
+                grid-row: span 3;
+            }
+
+            .about__text-container {
+                text-align: left;
+                font-size: 1rem;
+                grid-area: middle2;
+            }
+
+            .about__actions {
+                grid-area: bottom2;
+            }
+
         }
-        .about__text-container{
-            font-size: 1.4rem;
+    }
+
+    .about__text-container {
+
+        p.about__text.text1,
+        p.about__text.text2 {
+            word-spacing: .3rem;
+        }
+    }
+
+    .third__content-container2 {
+        max-width: 100%;
+
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "top1 top2"
+            "bottom1 bottom2";
+
+        .about__formation {
+            grid-area: top1;
+        }
+
+        .about__experience {
+            padding-top: 12rem;
+            grid-area: top1;
+        }
+
+        .accordion {
+            max-height: 100%;
+            place-self: flex-start;
+            grid-area: top2;
+            grid-row: span 2;
+            @include desktopWidth(50vw, 50%, 45rem);
+
+            .about__title {
+                font-weight: 200;
+                align-self: flex-start;
+            }
+
+            // .accordion__body{
+            //     padding-top: 18rem;
+            //     max-height: 15rem;
+            //     overflow: auto;
+            // }
         }
     }
 
@@ -307,48 +401,52 @@
 
 @include media-break-min-width(xlarge) {
 
-    //buttons.scss
-    // .btn__project {
-    //     &.big {
-    //         @include mobileWidth(50vw, null, 32rem);
-    //     }
-
-    //     &.small {
-    //         @include mobileWidth(50vw, 30%, 23rem);
-    //     }
-    // }
-
-    .first__content.content--container{
+    //home.scss
+    .first__content.content--container {
         margin-top: 10rem;
+
+        .first__header {
+            max-width: 45vw;
+        }
+    }
+
+    //technologies.scss
+    .technologies__container {
+        div.technologies__carousel {
+            gap: 10rem;
+        }
     }
 }
 
+@include media-break-min-width(xxlarge) {
 
-@media screen and (max-width: 380px) {
-    .bi-arrow-up-right {
-        display: none !important;
+    //buttons.scss
+    div.project__actions.actions__container {
+        align-self: flex-start;
+        @include desktopWidth(50vw, 50%, 30rem);
+    }
+
+    a.btn.btn__project.big {
+        @include desktopWidth(50vw, 20rem, 30rem);
+    }
+
+    //logo-container.scss
+    .header-container {
+        padding: .7rem 15rem;
+    }
+
+    //home.scss
+    .first__body video.first__video {
+        @include desktopWidth(80vw, 76rem, 80rem);
+    }
+
+    //about.scss
+    .third__content .third__content-container1 div.photo__container {
+        justify-self: center;
+    }
+
+    .third__content-container2 {
+        justify-content: center;
+        @include desktopWidth(100vw, 100%, 100%);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @include media-break-max-height(small) {
-//     .technologies__container {
-//         height: 80vh;
-
-//         .technologies__carousel {
-//             max-height: 60vh;
-//             height: 100%;
-//         }
-//     }
-// }

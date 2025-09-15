@@ -20,7 +20,14 @@
         color: #E2E9F0;
         gap: .3rem;
         opacity: .65;
-        transition: 1s ease-in-out;
+        transition: 1s ease-in-out, text-shadow .25s, opacity .25s;
+
+        &:hover{
+            transform: scale(1.1);
+            opacity: 1;
+            filter: brightness(3);
+            text-shadow: 5px 3px 5px var(--text-color);
+        }
 
     }
 

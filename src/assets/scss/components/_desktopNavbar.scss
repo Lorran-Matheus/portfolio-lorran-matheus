@@ -7,35 +7,35 @@
     .menu-desktop--container {
         @include displayFlex(row, center, center);
     }
-}
 
-.menu-desktop__item {
-    @include desktopWidth(100vw, 25%, 25%);
-    @include displayFlex(column, center, center);
-    background-color: var(--bg-navbar);
-    height: 100%;
-
-    .menu-desktop__link {
+    .menu__item {
+        @include desktopWidth(100vw, 25%, 25%);
         @include displayFlex(column, center, center);
-        color: #E2E9F0;
-        gap: .3rem;
-        opacity: .65;
-        transition: 1s ease-in-out, text-shadow .25s, opacity .25s;
+        background-color: var(--bg-navbar);
+        height: 100%;
 
-        &:hover{
-            transform: scale(1.1);
-            opacity: 1;
-            filter: brightness(3);
-            text-shadow: 5px 3px 5px var(--text-color);
+        .menu-desktop__link {
+            @include displayFlex(column, center, center);
+            color: #E2E9F0;
+            gap: .3rem;
+            opacity: .65;
+            transition: 1s ease-in-out, text-shadow .25s, opacity .25s;
+
+            &:hover {
+                transform: scale(1.1);
+                opacity: 1;
+                filter: brightness(3);
+                text-shadow: 5px 3px 5px var(--text-color);
+            }
+
         }
 
-    }
+        .menu-desktop__icon {
+            font-size: 1.7rem;
+        }
 
-    .menu-desktop__icon {
-        font-size: 1.7rem;
-    }
-
-    &.menu-active:has(.menu-desktop__link) .menu-desktop__link {
-        opacity: 1;
+        &.menu-active:has(.menu-desktop__link) .menu-desktop__link {
+            opacity: 1;
+        }
     }
 }

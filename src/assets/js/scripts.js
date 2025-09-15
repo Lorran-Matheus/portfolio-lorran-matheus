@@ -152,22 +152,37 @@ const observer = new IntersectionObserver((entries) => {
 
     if (section.isIntersecting) {
       itemsList.forEach(item => item.classList.remove("menu-active"));
-
+      
       if (activeItem) {
         activeItem.classList.add("menu-active");
+      }
+    } else {
+      if (activeItem){
+        activeItem.classList.remove("menu-active");
+        itemsList.forEach(item => item.classList.remove("menu-active"));
       }
     }
   });
 }, {
-  threshold: 0.1
+  threshold: 0.05
 });
 
-window.addEventListener('scroll', () => {
-  observer.observe(sections.home);
-  observer.observe(sections.projects);
-  observer.observe(sections.about);
-  observer.observe(sections.contact);
-})
+observer.observe(sections.home);
+observer.observe(sections.projects);
+observer.observe(sections.about);
+observer.observe(sections.contact);
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const carouselItems = document.querySelectorAll('.technologies__item');
 

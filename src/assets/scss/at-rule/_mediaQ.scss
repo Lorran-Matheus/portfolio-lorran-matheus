@@ -30,7 +30,7 @@
         }
 
         &.big {
-            @include mobileWidth(80vw, 60%, 80%);
+            @include mobileWidth(80vw, 60%, 80vw);
         }
 
         &.small {
@@ -176,14 +176,14 @@
         .menu-desktop--container {
             @include desktopWidth(45vw, 70%, 27rem);
 
-            .menu-desktop__item .menu-desktop__text {
+            .menu__item .menu-desktop__text {
                 font-size: 1.1rem;
             }
         }
     }
 
     .content--container {
-        padding: 1rem 5rem !important;
+        padding: 1rem 5rem;
     }
 
     //home.scss
@@ -392,6 +392,12 @@
             //     overflow: auto;
             // }
         }
+    }
+
+
+    .fourth__content.content--container {
+        padding-top: 10rem;
+
     }
 
     footer {

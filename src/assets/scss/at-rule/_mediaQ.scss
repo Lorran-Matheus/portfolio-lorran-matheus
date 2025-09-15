@@ -65,6 +65,11 @@
         }
     }
 
+    //objects.scss
+    .content--container {
+        padding: 1rem 1.5rem .5rem;
+    }
+
     //about.scss
     .about__text-container {
         @include displayFlex(column, center, center);
@@ -170,7 +175,6 @@
         }
     }
 
-
     //desktopNavbar.scss
     .menu__desktop {
         .menu-desktop--container {
@@ -247,6 +251,11 @@
         .logo-container {
             @include desktopWidth(3rem, 3rem, 3rem);
         }
+    }
+
+    //object.scss
+    .content--container {
+        padding: 1rem 5.5rem .5rem;
     }
 
     //projects.scss
@@ -407,6 +416,11 @@
 
 @include media-break-min-width(xlarge) {
 
+     //object.scss
+    .content--container {
+        padding: 1rem 8.5rem .5rem;
+    }
+
     //home.scss
     .first__content.content--container {
         margin-top: 10rem;
@@ -439,6 +453,11 @@
     //logo-container.scss
     .header-container {
         padding: .7rem 15rem;
+    }
+
+     //object.scss
+    .content--container {
+        padding: 1rem 11.5rem .5rem;
     }
 
     //home.scss

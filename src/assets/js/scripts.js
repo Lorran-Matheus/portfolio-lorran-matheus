@@ -51,8 +51,18 @@ function resizeTimer() {
         menuMobile.classList.add('hidden');
       }
     }, 300);
-  });
+
+  let reloadTimer;
+    if (window.innerWidth > 576) {
+      clearTimeout(reloadTimer);
+      reloadTimer = setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    }
+  });  
 }
+
+
 
 themeButton.addEventListener('click', () => {
 
@@ -105,6 +115,7 @@ accordionContainer.forEach(header => (
   })
 ))
 
+//Rotação do carrossel dos projetos
 document.querySelectorAll('.carousel__container').forEach(carousel => {
   const items = carousel.querySelectorAll('.carousel__item');
   const nextBtn = carousel.querySelector('.carousel__control-next');
@@ -145,6 +156,7 @@ const sections = {
   contact: document.getElementById('contact')
 };
 
+// Trocar destaque da navbar
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(section => {
     const currentSection = section.target.id;
@@ -164,7 +176,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.05
+  threshold: 0.1
 });
 
 observer.observe(sections.home);

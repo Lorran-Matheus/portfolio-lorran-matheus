@@ -1,5 +1,4 @@
-@use '../at-rule/mixin' as *;
-@use '../at-rule/keyframes' as *;
+@use '../at-rule' as *;
 
 .technologies__container {
     max-height: 60vh;
@@ -57,12 +56,14 @@
         cursor: pointer;
     }
 
+    &.tech-active .modal {
+        display: flex;
+    }
+
     .modal {
         position: absolute;
-        // max-height: 20vh;
-        // max-width: 20vw;
         aspect-ratio: 2/2;
-        top: -90%;
+        top: -100%;
         left: 50%;
         transform: translateX(-50%);
         background: #95B5F2;
@@ -75,27 +76,32 @@
         flex-direction: column;
         gap: .3rem;
 
-        .modal__close{
+        .modal__close {
             align-self: flex-end;
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 900;
+            font-size: 1.3rem;
             position: fixed;
-            top: 1rem;
+            top: .6rem;
+            z-index: 3;
             color: var(--text-color-secondary);
 
-            &:hover{
+            &:hover {
                 color: red;
             }
 
-        .modal__text{
-            &:hover{
+
+        }
+
+        .modal__text {
+            user-select: none;
+            text-align: left;
+            padding-top: 1rem;
+            animation: spawn-top .8s ease-in-out 1 forwards;
+
+            &:hover {
                 cursor: default;
             }
         }
-        }
     }
 
-}
-.show-modal {
-    display: flex;
 }

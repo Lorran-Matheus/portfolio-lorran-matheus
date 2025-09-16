@@ -25,7 +25,7 @@ if (!isMobile) {
   resizeTimer();
 } else {
   fetch('./src/pages/navbarMobile.html')
-  .then(r => {
+    .then(r => {
       if (!r) throw new Error('Erro ao gerar menu mobile');
       return r.text();
     })
@@ -52,14 +52,14 @@ function resizeTimer() {
       }
     }, 300);
 
-  let reloadTimer;
+    let reloadTimer;
     if (window.innerWidth > 576) {
       clearTimeout(reloadTimer);
       reloadTimer = setTimeout(() => {
         window.location.reload();
       }, 500);
     }
-  });  
+  });
 }
 
 
@@ -164,12 +164,12 @@ const observer = new IntersectionObserver((entries) => {
 
     if (section.isIntersecting) {
       itemsList.forEach(item => item.classList.remove("menu-active"));
-      
+
       if (activeItem) {
         activeItem.classList.add("menu-active");
       }
     } else {
-      if (activeItem){
+      if (activeItem) {
         activeItem.classList.remove("menu-active");
         itemsList.forEach(item => item.classList.remove("menu-active"));
       }
@@ -185,33 +185,28 @@ observer.observe(sections.about);
 observer.observe(sections.contact);
 
 
+//modal control
+const carouselItems = document.querySelectorAll('.technologies__item');
+function closeAllModals() {
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.classList.add('hidden');
+  });
+  carouselItems.forEach(item => item.classList.remove('tech-active'));
+}
 
+carouselItems.forEach(technologiesItem => {
+  const modal = technologiesItem.querySelector('.modal');
+  const closeModal = modal.firstElementChild;
 
+  technologiesItem.addEventListener('click', () => {
+    closeAllModals();
+    technologiesItem.classList.add('tech-active');
+    modal.classList.remove('hidden');
+  });
 
-
-
-
-
-
-
-
-
-// const carouselItems = document.querySelectorAll('.technologies__item');
-
-// carouselItems.forEach(techItem => {
-//   const carouselContainer = carouselItems.parentElement;
-  
-//   techItem.addEventListener('click', () => {
-//     techItem.classList.add('tech-active');
-//     const modal = techItem.lastElementChild;
-    
-//     if (techItem.classList.contains('tech-active')){
-//       modal.classList.add('show-modal');
-//     }
-
-//     modal.addEventListener('click', () => {
-//       modal.classList.remove('show-modal');
-//     })
-//   });
-
-// })
+  closeModal.addEventListener('click', (e) => {
+    e.stopPropagation();
+    technologiesItem.classList.remove('tech-active');
+    modal.classList.add('hidden');
+  });
+});

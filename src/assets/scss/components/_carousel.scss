@@ -1,5 +1,4 @@
-@use '../at-rule/mixin' as *;
-@use '../at-rule/keyframes' as *;
+@use '../at-rule' as *;
 
 .carousel__container{
     position: relative;

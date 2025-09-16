@@ -1,6 +1,6 @@
-@use 'about';
-@use 'contact';
-@use 'footer';
-@use 'home';
-@use 'projects';
-@use 'technologies';
+@forward 'about';
+@forward 'contact';
+@forward 'footer';
+@forward 'home';
+@forward 'projects';
+@forward 'technologies';

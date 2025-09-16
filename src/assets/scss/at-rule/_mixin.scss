@@ -1,4 +1,4 @@
-@use '../abstracts/variables' as *;
+@use '../abstracts' as *;
 @use 'sass:map';
 
 @mixin displayFlex($direction: null, $justify: null, $align: null) {

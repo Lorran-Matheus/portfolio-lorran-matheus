@@ -1,6 +1,6 @@
-@use 'buttons';
-@use 'carousel';
-@use 'desktopNavbar';
-@use 'logo-container';
-@use 'mobileNavbar';
-@use 'objects';
+@forward 'buttons';
+@forward 'carousel';
+@forward 'desktopNavbar';
+@forward 'logo-container';
+@forward 'mobileNavbar';
+@forward 'objects';

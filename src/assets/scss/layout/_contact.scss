@@ -1,4 +1,4 @@
-@use '../at-rule/mixin' as *;
+@use '../at-rule' as *;
 
 .fourth__content{
     @include displayFlex(column, center, center);

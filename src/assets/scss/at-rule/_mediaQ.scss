@@ -1,4 +1,4 @@
-@use '../at-rule/mixin' as *;
+@use 'mixin' as *;
 
 @media screen and (pointer: coarse) {
 
@@ -18,6 +18,11 @@
             transform: none !important;
             animation-play-state: running !important;
         }
+    }
+
+    //technologies.scss
+    .modal {
+        display: none !important;
     }
 }
 
@@ -204,6 +209,18 @@
         }
     }
 
+    //technoliges.scss
+    .technologies__container .technologies__carousel {
+        gap: 7rem;
+
+        .technologies__item .technologies__paragraph.modal {
+            @include desktopWidth(320%, 300%, 350%);
+            min-height: 130%;
+            max-height: 220%;
+        }
+    }
+
+
     //projects.scss
     .second__content.content--container {
         .project-1 {
@@ -225,6 +242,7 @@
             font-weight: 300;
         }
     }
+
 }
 
 @include media-break-min-width(large) {
@@ -256,6 +274,11 @@
     //object.scss
     .content--container {
         padding: 1rem 5.5rem .5rem;
+    }
+
+    //technoliges.scss
+    .technologies__container .technologies__carousel {
+        gap: 7rem;
     }
 
     //projects.scss
@@ -416,7 +439,7 @@
 
 @include media-break-min-width(xlarge) {
 
-     //object.scss
+    //object.scss
     .content--container {
         padding: 1rem 8.5rem .5rem;
     }
@@ -455,7 +478,7 @@
         padding: .7rem 15rem;
     }
 
-     //object.scss
+    //object.scss
     .content--container {
         padding: 1rem 11.5rem .5rem;
     }
@@ -463,6 +486,14 @@
     //home.scss
     .first__body video.first__video {
         @include desktopWidth(80vw, 76rem, 80rem);
+    }
+
+    //technoliges.scss
+    .technologies__container .technologies__carousel {
+
+        .technologies__item .technologies__paragraph.modal {
+            @include desktopWidth(380%, 300%, 400%);
+        }
     }
 
     //about.scss

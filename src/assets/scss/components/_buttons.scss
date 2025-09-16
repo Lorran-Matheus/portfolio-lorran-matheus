@@ -1,6 +1,4 @@
-@use '../at-rule/mixin' as *;
-@use '../at-rule/keyframes' as *;
-@use '../at-rule/mediaQ' as *;
+@use '../at-rule' as *;
 
 .btn {
     cursor: pointer;

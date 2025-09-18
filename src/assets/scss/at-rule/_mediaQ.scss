@@ -195,6 +195,12 @@
         padding: 1rem 5rem;
     }
 
+    //about.scss
+    .about__title.title2,
+    .project__title1 {
+        font-size: 3rem;
+    }
+
     //home.scss
     .first__content {
         margin-top: 6.3rem;
@@ -220,6 +226,9 @@
         }
     }
 
+    .about__text-container {
+        font-size: 1.1rem;
+    }
 
     //projects.scss
     .second__content.content--container {
